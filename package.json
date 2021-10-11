@@ -1,0 +1,16 @@
+{
+  "name": "mediastream-api",
+  "version": "1.0.0",
+  "description": "Basic examples using the mediaStream API in JS for recording audio and video",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Javascript",
+    "webdev",
+    "mediaStream"
+  ],
+  "author": "Zygimantas Sniurevicius",
+  "license": "MIT"
+}
