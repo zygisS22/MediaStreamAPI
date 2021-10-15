@@ -1,5 +1,5 @@
 const buttons = document.querySelectorAll(".button");
-const startButton = document.querySelector("#startAudio");
+const startAudioButton = document.querySelector("#startAudio");
 const startScreenButton = document.querySelector("#startScreen");
 const stopButton = document.querySelector("#stopAudio");
 const audioList = document.querySelector("#audio-list");
@@ -12,7 +12,7 @@ if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
   alert("Your browser does not support recording!");
 }
 
-startButton.addEventListener("click", recordAudio);
+startAudioButton.addEventListener("click", recordAudio);
 stopButton.addEventListener("click", stopRecording);
 startScreenButton.addEventListener("click", recordSCreen);
 
@@ -25,7 +25,7 @@ function recordAudio() {
     })
     .then((stream) => {
       stopButton.disabled = false;
-      startButton.disabled = true;
+      startAudioButton.disabled = true;
       startScreenButton.disabled = true;
 
       mediaRecorder = new MediaRecorder(stream);
@@ -54,7 +54,7 @@ function recordSCreen() {
     })
     .then((stream) => {
       stopButton.disabled = false;
-      startButton.disabled = true;
+      startAudioButton.disabled = true;
       startScreenButton.disabled = true;
 
       mediaRecorder = new MediaRecorder(stream);
@@ -76,7 +76,7 @@ function recordSCreen() {
 // stops audio or video
 function stopRecording() {
   stopButton.disabled = true;
-  startButton.disabled = false;
+  startAudioButton.disabled = false;
   startScreenButton.disabled = false;
   mediaRecorder.stop();
 }
@@ -97,6 +97,6 @@ function createMediaElement(mediaType, fileType, placeToAdd) {
   chunks = [];
 
   stopButton.disabled = true;
-  startButton.disabled = false;
+  startAudioButton.disabled = false;
   startScreenButton.disabled = false;
 }
